@@ -1,0 +1,37 @@
+# Daimler Project - Telltale Requirements (Redacted for Confidentiality)
+
+> Note: Some identifiers and proprietary logic have been redacted or anonymized to preserve Daimler’s confidential information. This document is intended for internal use or open-source collaboration with approved teams only.
+
+## Overview
+
+This document outlines the software requirements for telltale (warning/indicator) logic implementation in the Daimler HMI Phase-2 project. Each requirement includes data mapping, communication logic, and display behavior for individual telltales.
+
+## Requirement Table (Partial)
+
+| S.No | Telltale Name           | Icon    | Colour | PGN/CAN ID   | Data Type | Update Rate | SPN    | Description                | Byte Pos | Length | Factor | Offset | Operating Range | Logic           | Display Name         | Popup Priority |
+| ---- | ----------------------- | ------- | ------ | ------------ | --------- | ----------- | ------ | -------------------------- | -------- | ------ | ------ | ------ | --------------- | --------------- | -------------------- | -------------- |
+| 1    | LV Battery Not Charging | Picture | Red    | 0x18FFD000   | Unsigned  | 100ms       | 521023 | V Battery Not Charging     | 1.1      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON | LV Battery Error     | 6              |
+| 2    | Low Air Pressure        | Picture | Red    | CONFIDENTIAL | CONF      | CONF        | CONF   | Low air pressure indicator | CONF     | CONF   | CONF   | CONF   | CONF            | LOGIC TBD       |                      |                |
+| 3    | Park Brake              | Picture | Red    | 0x18FFD000   | Unsigned  | 100ms       | 521025 | Park Brake Indicator       | 1.3      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON |                      |                |
+| 4    | Stop Lamp/Warning       | Picture | Red    | 0x18FFD000   | Unsigned  | 100ms       | 521026 | Severe Fault Alert         | 1.4      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON | Stop                 | 1              |
+| 5    | Brake Malfunction       | Picture | Red    | CONFIDENTIAL | CONF      | CONF        | CONF   | Faults with Aux Inverter   | CONF     | CONF   | CONF   | CONF   | CONF            | Pending Input   |                      |                |
+| 6    | Low Battery SOC         | Picture | Red    | 0x18FFD000   | Unsigned  | 100ms       | 521028 | Warning SoC Low            | 1.6      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON |                      |                |
+| 7    | Vehicle Ready           | Label   | Green  | 0x18FFD000   | Unsigned  | 100ms       | 521029 | EV Ready Status            | 1.7      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON |                      |                |
+| 8    | High Voltage Warning    | Picture | Red    | 0x18FFD000   | Unsigned  | 100ms       | 521031 | HV Isolation Fault         | 2.1      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON | High Voltage Warning | 2              |
+| 9    | Propulsion Failure      | Picture | Red    | 0x18FFD000   | Unsigned  | 100ms       | 521032 | Motor Temp / Error         | 2.2      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON | Motor Error          | 3              |
+| 10   | HV Battery Error        | Picture | Red    | 0x18FFD000   | Unsigned  | 100ms       | 521033 | HV Battery Temp/Error      | 2.3      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON | HV Battery Error     | 7              |
+| ...  | ...                     | ...     | ...    | ...          | ...       | ...         | ...    | ...                        | ...      | ...    | ...    | ...    | ...             | ...             | ...                  | ...            |
+
+\| 11   | Emergency Switch Status    | Picture   | Red    | 0x18FFD000   | Unsigned  | 100ms        | 521034   | Emergency Stop Active          | 2.4      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON   |                     |                |
+\| 12   | High Coolant Temp Warning  | Picture   | Red    | 0x18FFD000   | Unsigned  | 100ms        | 521035   | High Battery Chiller Temp      | 2.5      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON   |                     |                |
+\| 13   | Brake Compressor Oil Low   | Picture   | Red    | 0x18FFD000   | Unsigned  | 100ms        | 521036   | Brake Compressor Oil Pressure  | 2.6      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON   |                     |                |
+\| 14   | High Transmission Temp     | Picture   | Yellow | 0x18FFD000   | Unsigned  | 100ms        | 521037   | E-Axle Transmission Temp High  | 2.7      | 1      | 1      | 0      | 0 to 1          | 0 = OFF, 1 = ON   |                     |                |
+\| 15   | Transmission Fault Alert   | Picture   | Yellow | 0x18FFD000   | Unsigned  | 100ms        | 521038   | PCM/Transmission Fault         | 2.8      | 1      | 1      | 0      | 0 to 1          | 0 =
+
+## Confidential Handling
+
+* Proprietary identifiers like **CAN ID**, **SPN**, and internal logic for specific telltales have been masked or marked as `CONFIDENTIAL`.
+* Full logic and safety algorithms must be stored securely and only shared with authorized contributors.
+
+## Contribution Guidelines
+
