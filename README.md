@@ -28,7 +28,7 @@ Message Menu Implementation
 
 Multi-slide message handling system for system or user alerts
 
-🧰 Tools & Technologies Used:
+Tools & Technologies Used:
 HMI Design Tools: Embedded GUI tools (e.g., Altia, EB Guide, or Qt)
 
 Communication Protocols: CAN (for signal integration with vehicle ECUs)
@@ -39,7 +39,7 @@ Languages: CAPL, Embedded C (for signal simulation and testing)
 
 Platforms: AUTOSAR-based ECU architecture, Vector Tools
 
-🔧 Responsibilities (sample — adjust based on your role):
+Responsibilities (sample — adjust based on your role):
 Developed HMI logic to visualize EV states like charging, high voltage, and limp mode.
 
 Mapped CAN signals to HMI elements based on Daimler's specifications.
@@ -50,5 +50,5 @@ Created test cases for all 15 screen slides and validated output on HIL benches.
 
 Collaborated with UI/UX and diagnostics teams for signal mapping and visual consistency.
 
-🚀 Project Impact:
+Project Impact:
 Enabled Daimler’s next-generation electric vehicles to provide intuitive, safety-compliant, and real-time visual feedback to drivers. This significantly improved user experience and vehicle diagnostics transparency
